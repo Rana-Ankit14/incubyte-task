@@ -23,5 +23,6 @@ describe("String Calculator", () => {
 
   it("should Support different delimiters", () => {
     expect(add("//;\n1;2")).toBe(3);
+    expect(add("//|\n9|10|11")).toBe(30);
   });
 });
