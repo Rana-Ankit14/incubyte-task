@@ -20,4 +20,8 @@ describe("String Calculator", () => {
     expect(add("1\n5")).toBe(6);
     expect(add("5\n9,100")).toBe(114);
   });
+
+  it("should Support different delimiters", () => {
+    expect(add("//;\n1;2")).toBe(3);
+  });
 });
