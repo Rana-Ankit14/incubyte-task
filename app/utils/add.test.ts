@@ -15,4 +15,9 @@ describe("String Calculator", () => {
     expect(add("1,5")).toBe(6);
     expect(add("5,9")).toBe(14);
   });
+
+  it("should return the sum of numbers if new lines are used between numbers instead of commas.", () => {
+    expect(add("1\n5")).toBe(6);
+    expect(add("5\n9,100")).toBe(114);
+  });
 });

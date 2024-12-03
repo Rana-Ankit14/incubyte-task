@@ -5,7 +5,7 @@ export const add = (numbers: string): number => {
   if (numbers.trim().length === 0) {
     return 0;
   }
-  const numberArr = numbers.split(",");
+  const numberArr = numbers.split(/,|\n/);
   const sum = numberArr.reduce((prevValue, currentValue) => {
     return prevValue + parseInt(currentValue);
   }, 0);
