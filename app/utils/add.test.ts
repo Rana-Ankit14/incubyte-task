@@ -32,4 +32,10 @@ describe("String Calculator", () => {
       "Negative numbers not allowed: -2,-10,-98"
     );
   });
+
+  it("should support custom delimiter and throw an error for negative numbers", () => {
+    expect(() => add("//;\n5;-12;50;-9")).toThrow(
+      new Error("Negative numbers not allowed: -12,-9")
+    );
+  });
 });
