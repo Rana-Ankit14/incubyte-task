@@ -1,5 +1,3 @@
-import "server-only";
-
 export const add = (numbers: string): number => {
   // checking for empty string
   if (numbers.trim().length === 0) {
