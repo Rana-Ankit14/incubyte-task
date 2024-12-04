@@ -33,11 +33,35 @@ describe("String Calculator", () => {
 
       9`)
     ).toBe(19);
+    expect(
+      add(`10
+
+
+
+        
+      9`)
+    ).toBe(19);
   });
 
   it("should Support different delimiters", () => {
     expect(add("//;\n1;2")).toBe(3);
-    expect(add("//|\n9|10|11")).toBe(30);
+    expect(add(`//|\n9|10|11`)).toBe(30);
+  });
+
+  it("should support different delimiters and new lines", () => {
+    expect(
+      add(`//;\n900
+      100;100`)
+    ).toBe(1100);
+    expect(
+      add(`//|
+      900
+
+
+
+
+      100|100|100`)
+    ).toBe(1200);
   });
 
   it("should throw an error for negative number", () => {

@@ -11,8 +11,7 @@ export default function HomePage() {
 
   const handleCalculate = () => {
     try {
-      const updatedString = value.replace(/\\n/g, "\n");
-      const sum = add(updatedString);
+      const sum = add(value);
 
       setTotal(`${sum}`);
       setError("");
