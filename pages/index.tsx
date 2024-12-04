@@ -7,10 +7,13 @@ export default function HomePage() {
   const [value, setValue] = useState("");
   const [total, setTotal] = useState("");
   const [error, setError] = useState("");
+  console.log({ value });
 
   const handleCalculate = () => {
     try {
-      const sum = add(value);
+      const updatedString = value.replace(/\\n/g, "\n");
+      const sum = add(updatedString);
+
       setTotal(`${sum}`);
       setError("");
     } catch (e) {
@@ -19,7 +22,7 @@ export default function HomePage() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
   };
 
@@ -35,9 +38,8 @@ export default function HomePage() {
           <label htmlFor="calc" className={styles.label}>
             Enter String to be calculated
           </label>
-          <input
+          <textarea
             onChange={handleChange}
-            type="text"
             id="calc"
             name="calc"
             required

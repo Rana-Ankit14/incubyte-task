@@ -19,6 +19,20 @@ describe("String Calculator", () => {
   it("should return the sum of numbers if new lines are used between numbers instead of commas.", () => {
     expect(add("1\n5")).toBe(6);
     expect(add("5\n9,100")).toBe(114);
+    expect(
+      add(`10
+      9,100`)
+    ).toBe(119);
+  });
+
+  it("should able handle multiple continues new line", () => {
+    expect(add("1\n5")).toBe(6);
+    expect(add("5\n9,100")).toBe(114);
+    expect(
+      add(`10
+
+      9`)
+    ).toBe(19);
   });
 
   it("should Support different delimiters", () => {

@@ -20,7 +20,7 @@ export const add = (numbers: string): number => {
       return 0;
     }
 
-    return prevValue + parseInt(currentValue);
+    return prevValue + parseInt(currentValue || "0");
   }, 0);
 
   if (negativeNumbers.length > 0) {
