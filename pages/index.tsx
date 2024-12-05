@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "@/pages/index.module.css";
-import UserInstruction from "@/components/instructions";
-import CalculatorPanel from "@/components/calculatorPanel";
+import UserInstruction from "@/components/Instructions";
+import CalculatorPanel from "@/components/CalculatorPanel";
 
 export default function HomePage() {
   return (

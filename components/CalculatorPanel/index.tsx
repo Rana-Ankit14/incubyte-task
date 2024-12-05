@@ -10,6 +10,11 @@ const CalculatorPanel: React.FC = () => {
   const handleCalculate = () => {
     try {
       const sum = add(value);
+      if (isNaN(sum)) {
+        throw new Error(
+          "I couldn't calculate that, Make sure to use numbers and the correct format."
+        );
+      }
       setError("");
       setTotal(`${sum}`);
     } catch (e) {
