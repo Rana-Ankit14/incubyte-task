@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/pages/index.module.css";
 import { useState } from "react";
 import { add } from "utils/add";
+import UserInstruction from "@/components/instructions";
 
 export default function HomePage() {
   const [value, setValue] = useState("");
@@ -56,6 +57,9 @@ export default function HomePage() {
           {error && <h4 className={styles.error}>{error}</h4>}
         </div>
       </main>
+      <aside className={styles.aside}>
+        <UserInstruction />
+      </aside>
     </div>
   );
 }
